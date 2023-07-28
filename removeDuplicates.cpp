@@ -32,7 +32,7 @@ using namespace std;
 
 	- Time complixity: O(n)
 
-	- Solution:
+	- Approach:
         I iterate over the array with the first pointer (i),
         And I keep truck of the first non duplicate element with
         the second pointer (j), Whenever nums[j] == nums[i] I replace
@@ -40,6 +40,11 @@ using namespace std;
         And I increment j until it does not equal to placeholder,
         Then I used Remove Element algorithm to move all the placeholders
         to the end of the array
+
+    - Approach 2 (from geeksforgeeks):
+        Iterate with the first pointer (i) over nums, Once
+        nums[i] != nums[i + 1], update nums[second pointer (j)]
+        with nums[i] and increment j;
 
 */
 
@@ -74,10 +79,29 @@ int removeDuplicates(vector<int>& nums) {
     return j;
 }
 
-int main () {
-    vector<int> vec = {0,0,1,1,1,2,2,3,3,4};
+int removeDuplicates2(vector<int>& nums)
+{
+    if (nums.size() == 0 || nums.size() == 1)
+        return nums.size();
 
-    int ret = removeDuplicates(vec);
+    int j = 0;
+    
+    for (int i = 0; i < nums.size() - 1; i++) {
+        if (nums[i] != nums[i + 1]) {
+            nums[j] = nums[i];
+            j++;
+        }
+    }
+
+    nums[j++] = nums[nums.size() -1];
+
+    return j;
+}
+
+int main () {
+    vector<int> vec = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+
+    int ret = removeDuplicates2(vec);
 
 	cout << "Expected" << " 0 1 2 3 4 " << endl;
 
