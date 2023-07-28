@@ -103,9 +103,9 @@ int main () {
 
     int ret = removeDuplicates2(vec);
 
-	cout << "Expected" << " 0 1 2 3 4 " << endl;
+	cout << "Expected: " << " 0 1 2 3 4 " << endl;
 
-	cout << "Output ";
+	cout << "Output:   ";
 	for(int i = 0; i < ret ; i++) {
 		cout << vec[i] << " ";
 	}
