@@ -34,7 +34,7 @@ using namespace std;
 
 	- Time complixity: o(n)
 
-	- Solution: 
+	- Approach: 
         I used tow pointers (i) and (j), (i) iterates over the array,
         and (j) keeps truck of the first element of equal numbers,
         I used (c) to keep counting the numbsers one (c) is not less
@@ -42,6 +42,9 @@ using namespace std;
         until nums[i] != nums[j] than I move (j) to his new position
         which is (i) and I initailize (c) with 1, once that done I used
         Romove Element Algorithem to move all the pl to the end of nums.
+
+    - Approach 2:
+        source: https://www.youtube.com/watch?v=ycAq8iqh0TI    
 
 */
 
@@ -84,10 +87,27 @@ int removeDuplicates(vector<int>& nums) {
     return j;
 }
 
+int removeDuplicates2(vector<int>& nums) {
+    int j = 0, c;
+
+    for (int i = 0; i < nums.size(); i++) {
+        c = 1;
+        while(i + 1 < nums.size() && nums[i] == nums[i + 1]) {
+            c++;
+            i++;
+        }
+
+        for (int k = 0; k < min(c, 2); k++)
+            nums[j++] = nums[i];
+    }
+
+    return j;
+}
+
 int main () {
     vector<int> vec = {0,0,1,1,1,1,1,2,3,3};
 
-    int ret = removeDuplicates(vec);
+    int ret = removeDuplicates2(vec);
 
 	cout << "Expected: " << "0 0 1 1 2 3 3" << endl;
 

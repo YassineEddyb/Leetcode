@@ -15,7 +15,7 @@ using namespace std;
 
 	- Time complixity: 
 
-	- Solution:
+	- Approach:
 */
 
 int main () {
