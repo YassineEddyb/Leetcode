@@ -26,6 +26,9 @@ using namespace std;
     - Space complixity: O(n)
 
 	- Approach:
+        I used a Hash map to keep truck of the count of all element
+        in the array, Then I return the most occurent element in the
+        array.
 
 */
 
