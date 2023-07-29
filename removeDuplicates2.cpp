@@ -30,11 +30,19 @@ using namespace std;
         Input: nums = [0,0,1,1,1,1,2,3,3]
         Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 		
-	- Algorithem: 
+	- Algorithem: Tow pointer tecknique
 
-	- Time complixity: 
+	- Time complixity: o(n)
 
 	- Solution: 
+        I used tow pointers (i) and (j), (i) iterates over the array,
+        and (j) keeps truck of the first element of equal numbers,
+        I used (c) to keep counting the numbsers one (c) is not less
+        than 2, I replace the following number with a placeholder (pl)
+        until nums[i] != nums[j] than I move (j) to his new position
+        which is (i) and I initailize (c) with 1, once that done I used
+        Romove Element Algorithem to move all the pl to the end of nums.
+
 */
 
 int removeDuplicates(vector<int>& nums) {
@@ -44,41 +52,40 @@ int removeDuplicates(vector<int>& nums) {
     if (nums.size() < 3)
         return nums.size();
 
-    while( i < nums.size() ) {
+    while(i < nums.size()) {
         if (nums[i] == nums[j]) {
             if (c < 2) {
                 c++;
             } else {
                 nums[i] = pl;
-                c = 1;
             }
-        } else
+        } else {
             j = i;
+            c = 1;
+        }
         i++;
     }
 
 
     // Romove Element Algorithem
-    // j = 0;
-    // for (int i = 0; i < nums.size(); i++) {
-    //     if (nums[i] != pl) {
-    //         if (j == i) {
-    //             j++;
-    //             continue;
-    //         }
-    //         nums[j] = nums[i];
-    //         nums[i] = pl;
-    //         j++;
-    //     }
-    // }
+    j = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != pl) {
+            if (j == i) {
+                j++;
+                continue;
+            }
+            nums[j] = nums[i];
+            nums[i] = pl;
+            j++;
+        }
+    }
 
-    return nums.size();
+    return j;
 }
 
 int main () {
     vector<int> vec = {0,0,1,1,1,1,1,2,3,3};
-    // vector<int> vec = {0,0};
-    // vector<int> vec = {0,2,2,2};
 
     int ret = removeDuplicates(vec);
 
