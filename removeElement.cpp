@@ -31,6 +31,7 @@ using namespace std;
 	- Algorithem: Two pointer techniquer
 
 	- Time complixity: o(n)
+	- Space complixity: O(1)
 
 	- Solution:
         I iterate over the vector with the first pointer (i),

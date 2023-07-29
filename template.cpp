@@ -1,6 +1,7 @@
-using namespace std;
-#include <vector>
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 /*
     - Problem: 
@@ -14,14 +15,15 @@ using namespace std;
 	- Algorithem: 
 
 	- Time complixity: 
+	- Space complixity:
 
 	- Approach:
 */
 
 int main () {
-	cout << "Expected" << " " << endl;
+	cout << "Expected: " << " " << endl;
 
-	cout << "Output ";
+	cout << "Output:   ";
 	// for(int i = 0; i < v1.size(); i++) {
 	// 	cout << v1[i] << " ";
 	// }

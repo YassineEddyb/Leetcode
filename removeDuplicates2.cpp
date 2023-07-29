@@ -33,6 +33,7 @@ using namespace std;
 	- Algorithem: Tow pointer tecknique
 
 	- Time complixity: o(n)
+	- Space complixity: O(1)
 
 	- Approach: 
         I used tow pointers (i) and (j), (i) iterates over the array,

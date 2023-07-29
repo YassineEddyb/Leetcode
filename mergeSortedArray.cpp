@@ -25,6 +25,7 @@ using namespace std;
 	- Algorithem: Two pointer techniquer
 
 	- Time complixity: O(n)
+	- Space complixity: O(1)
 
 	- Solution:
 		Since the given arrays are sorted, 

@@ -31,6 +31,7 @@ using namespace std;
 	- Algorithem: Two pointer tecknique
 
 	- Time complixity: O(n)
+	- Space complixity: O(1)
 
 	- Approach:
         I iterate over the array with the first pointer (i),
