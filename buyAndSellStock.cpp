@@ -26,7 +26,7 @@ using namespace std;
 	- Algorithem: Greedy Algorithem
 
 	- Time complixity: O(n) 
-	- Space complixity: O(n)
+	- Space complixity: O(1)
 
 	- Approach: 
         we use a variable buy with keep tuck of the lowest element
