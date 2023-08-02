@@ -20,21 +20,30 @@ using namespace std;
 	- Example: 
 		Input: nums = [2,3,1,1,4]
 		Output: true
+		Input: nums = [3,2,1,0,4]
+		Output: false
 		
-	- Algorithem: 
+	- Algorithem: gready method
 
-	- Time complixity: 
-	- Space complixity:
+	- Time complixity: O(n)
+	- Space complixity: O(1)
 
 	- Approach:
+		I used pos to keep truck of the position with most steps
+		in it (gready), On every iteration I check if pos < nums[i]
+		if so then pos = nums[i] and I decrease pos with 1,
+		But first I check if (pos == 0 and nums[i] == 0) than means
+		the we can not move to the next index I return 0, If everythig
+		is ok means that we reached the end of array and I return 1.
+
 */
 
 bool canJump(vector<int>& nums) {
-    int pos = nums[0], steps = nums.size() - 1;
+    int pos = nums[0];
 
-	for (int i = 0; i < nums.size() -1; i++) {
-		if (pos <= 0 && nums[i] <= 0) return 0;
-		if (pos <= nums[i]) {
+	for (int i = 0; i < nums.size() - 1; i++) {
+		if (pos == 0 && nums[i] == 0 ) return 0;
+		if (pos < nums[i]) {
 			pos = nums[i]; 
 		}
 		pos--;
@@ -44,12 +53,12 @@ bool canJump(vector<int>& nums) {
 }
 
 int main () {
-	vector<int> vec = {1,1,1,0};
-	// vector<int> vec = {3,2,1,0,4};
-	// vector<int> vec = {2,3,1,1,4};
+	vector<int> vec = {3,2,1,0,4};
+	vector<int> vec2 = {2,3,1,1,4};
 
 	int ret = canJump(vec);
+	int ret2 = canJump(vec2);
 
-    cout << "Expected: " << 1 << endl;
-	cout << "Output:   " << ret << endl;
+    cout << "Expected: 0 1" << endl;
+	cout << "Output:   " << ret << " " << ret2 << endl;
 }
