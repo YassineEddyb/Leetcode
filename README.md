@@ -1,6 +1,8 @@
-# leetcode
+# Leetcode
 
+This repository is my container of the prolems I solved at Leetcode platform
 
+### problems
 1- <a href="./mergeSortedArray.cpp">Merge Sorted Array</a> <br>
 2- <a href="./removeElement.cpp">Remove Element</a> <br>
 3- <a href="./removeDuplicates.cpp">Remove Duplicates from Sorted Array</a> <br>
