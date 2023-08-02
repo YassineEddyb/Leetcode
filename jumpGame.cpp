@@ -35,6 +35,9 @@ using namespace std;
 		But first I check if (pos == 0 and nums[i] == 0) than means
 		the we can not move to the next index I return 0, If everythig
 		is ok means that we reached the end of array and I return 1.
+	
+	- Approach 2:
+		https://www.youtube.com/watch?v=muDPTDrpS28&t=299s
 
 */
 
@@ -50,6 +53,19 @@ bool canJump(vector<int>& nums) {
 	}
 
 	return 1;
+}
+
+bool canJump2(vector<int>& nums) {
+    int reachable = 0;
+
+	for (int i = 0; i < nums.size(); i++) {
+		if ( i > reachable) return false;
+
+		if (nums[i] + i > reachable)
+			reachable = nums[i] + i;
+	}
+
+	return true;
 }
 
 int main () {
