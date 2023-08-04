@@ -5,9 +5,9 @@
 using namespace std;
 
 /*
-    - Problem: H-Index
+	- Problem: H-Index
 
-    - Difficulty: Meduim
+	- Difficulty: Meduim
 
 	- Subject: 
 		Given an array of integers citations where citations[i]
@@ -94,6 +94,6 @@ int main () {
 
 	int ret = hIndex(vec);
 
-    cout << "Expected: 3" << endl;
+	cout << "Expected: 3" << endl;
 	cout << "Output:   " << ret << endl;
 }
