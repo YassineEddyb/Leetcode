@@ -17,7 +17,7 @@ using namespace std;
 		According to the definition of h-index on Wikipedia:
 		The h-index is defined as the maximum valueof h such
 		that the given researcher has published at least h
-		papers that have each been cited at least h times.
+		papers that have eac-h been cited at least h times.
 		
 	- Example: 
 		Input: citations = [3,0,6,1,5]
