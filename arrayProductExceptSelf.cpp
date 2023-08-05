@@ -25,17 +25,32 @@ using namespace std;
 		
 	- Algorithem: prefix Porduct, Suffix Product.
 
-	- Time complixity: O(n) 
-	- Space complixity: O(n)
-
 	- Approach 1:
+		- Time complixity: O(n) 
+		- Space complixity: O(n)
+
 		Lets take (i) as an element in array, We want to 
 		calculate the product (P) of array except (i) let's
 		call it (Px), If we think about it we'll find that
 		Px(i) = P(0, i - 1) * P(i + 1, nums.size() - 1)
 		I used two arrays to calculate the prefix product 
 		and suffix product, and the used them to get the
-		procuct of each element.
+		product of each element.
+	
+	- Approach 2:
+		- Time complixity: O(n) 
+		- Space complixity: O(1)
+
+		Instead of using two arrays to store prefix product and
+		suffix product we can use the output array to store
+		the prifix product, And we use suffixProduct variable
+		to store the suffix, As we iterate over nums from the 
+		end (i = n - 1) we multiply with the prifix Product
+		which is stored in output[i] with suffixProduct and
+		we store it in output[i], Then we recalculate the
+		suffixProduct by multiplying it with nums[i].
+		
+
 */
 
 vector<int> productExceptSelf(vector<int>& nums) {
@@ -69,10 +84,34 @@ vector<int> productExceptSelf(vector<int>& nums) {
     return output;
 }
 
+vector<int> productExceptSelf2(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> output(n);
+
+	// initailize prefix[0] with 1
+    output[0] = 1;
+
+	// calculate the accumilative prefix product
+    for(int i = 1; i < n; i++)
+        output[i] = output[i - 1] * nums[i - 1];
+
+	// suffix product variable to store the suffix
+	int suffixProduct = 1;
+	// start from the end iterate over nums
+	for (int i = n - 1; i >= 0; i--) {
+		// multipy the prefix product with suffix
+		output[i] *= suffixProduct;
+		// recalculate the suffix
+		suffixProduct *= nums[i];
+	}
+
+    return output;
+}
+
 int main () {
 	vector<int> vec = {1,2,3,4};
 
-	vector<int> pVec = productExceptSelf(vec);
+	vector<int> pVec = productExceptSelf2(vec);
 
     cout << "Expected: " << "24 12 8 6" << endl;
 
