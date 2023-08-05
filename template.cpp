@@ -4,9 +4,9 @@
 using namespace std;
 
 /*
-    - Problem: 
+	- Problem: 
 
-    - Difficulty:
+	- Difficulty:
 
 	- Subject: 
 		
