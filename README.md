@@ -17,3 +17,4 @@ This repository is my container of the problems I solved at Leetcode platform al
 11- <a href="./H-Index.cpp">H-Index</a> `Meduim` <br>
 12- <a href="./arrayProductExceptSelf.cpp">Product of Array Except Self</a> `Meduim` <br>
 13- <a href="./gasStation.cpp">Gas Station</a> `Meduim` <br>
+14- <a href="./candy.cpp">Candy</a> `Hard` <br>
