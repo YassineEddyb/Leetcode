@@ -19,3 +19,4 @@ This repository is my container of the problems I solved at Leetcode platform al
 13- <a href="./gasStation.cpp">Gas Station</a> `Meduim` <br>
 14- <a href="./candy.cpp">Candy</a> `Hard` <br>
 15- <a href="./romanToInteger.cpp">Roman to Integer</a> `Hard` <br>
+19- <a href="./longestCommonPrefix.cpp">Longest Common Prefix</a> `Easy` <br>
