@@ -32,25 +32,30 @@ void reverse(string& s, int start, int end) {
 }
 
 string reverseWords(string s) {
-    reverse(s, 0 , s.size() - 1);
-    int j = 0;
+    string res;
+    s = "  " + s;
+    int j = s.size() - 1;
 
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == ' ') {
-            reverse(s, j, i - 1);
-            j = i + 1;
+    for (int i = s.size() - 1; i >= 0; i--) {
+        if ((s[i] == ' ' || i == 0) && i < j) {
+            int start = i ? i + 1: i;
+            string tmp(s, start, j - start + 1);
+            res += res.size() ? " " + tmp : "" + tmp;
+            j = i - 1;
+        } else if (s[i] == ' ') {
+            j--;
         }
     }
 
-    return s;
+    return res;
 }
 
 int main () {
-    string s = "Hello World";
+    string s = "a";
 
     string ret = reverseWords(s);
 
-	cout << "Expected: " << "5" << endl;
+	cout << "Expected: " << "World Hello" << endl;
 
 	cout << "Output:   " << ret << endl;
 }
