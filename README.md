@@ -18,4 +18,7 @@ This repository is my container of the problems I solved at Leetcode platform al
 12- <a href="./arrayProductExceptSelf.cpp">Product of Array Except Self</a> `Meduim` <br>
 13- <a href="./gasStation.cpp">Gas Station</a> `Meduim` <br>
 14- <a href="./candy.cpp">Candy</a> `Hard` <br>
-15- <a href="./romanToInteger.cpp">Roman to Integer</a> `Hard` <br>
+16- <a href="./romanToInteger.cpp">Roman to Integer</a> `Easy` <br>
+17- <a href="./integerToRoman.cpp">Integer to Roman</a> `Meduim` <br>
+18- <a href="./lengthOfLastWord.cpp">Length of Last Word</a> `Easy` <br>
+19- <a href="./longestCommonPrefix.cpp">Longest Common Prefix</a> `Easy` <br>
