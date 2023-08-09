@@ -4,7 +4,7 @@
 using namespace std;
 
 /*
-	- Problem: 
+	- Problem: Longest Common Prefix
 
 	- Difficulty:
 
