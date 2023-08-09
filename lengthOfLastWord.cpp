@@ -28,7 +28,7 @@ using namespace std;
 
 	- Approach: 
         First we skip spaces and then calculate the length
-        of the last word.c
+        of the last word.
 */
 
 int lengthOfLastWord(string s) {
@@ -39,6 +39,7 @@ int lengthOfLastWord(string s) {
         i--;
 
     int n = i;
+    
     // loop until you counter a space
     while(i >= 0) {
         if (s[i] == ' ')
