@@ -18,12 +18,16 @@ using namespace std;
         Output: 3
         Explanation: The answer is "abc", with the length of 3.
 		
-	- Algorithem: Sliding Window
+	- Algorithem: Sliding Window, Hash-map
 
-	- Time complixity: O(n)
+	- Time complixity: O(n log n)
 	- Space complixity: O(n)
 
 	- Approach:
+        I used Sliding Window tecknique to find the smallest
+        substring without repeating characters and a hash-map
+        to keep truck of the characters (pos + 1) in the window.
+        
 */
 
 int lengthOfLongestSubstring(string s) {
@@ -33,7 +37,7 @@ int lengthOfLongestSubstring(string s) {
     // iterate over s
     for (int r = 0; r < s.size(); r++) {
 
-        /* if (s[r]) is found in map (l) moves to of max
+        /* if (s[r]) is found in map, (l) moves to of max
            (l) and m[s[r]] so that (l) never goes back */
         if (m.find(s[r]) != m.end()) {
             l = max(l, m[s[r]]);

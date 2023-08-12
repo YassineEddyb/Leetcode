@@ -30,3 +30,4 @@ This repository is my container of the problems I solved at Leetcode platform al
 24- <a href="./maxArea.cpp">Container With Most Water</a> `Meduim` <br>
 25- <a href="./3Sum.cpp">3Sum</a> `Meduim` <br>
 26- <a href="./minSubArrayLen.cpp">Minimum Size Subarray Sum</a> `Meduim` <br>
+27- <a href="./lenOfLongestSubstr.cpp">Longest Substring Without Repeating Characters</a> `Meduim` <br>
