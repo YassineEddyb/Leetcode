@@ -37,22 +37,28 @@ using namespace std;
 
 	- Approach:
         Since the numbers are sorted, I used Tow pointer (l)
-        left and (r) right if  
+        left and (r) right if the sum of numbers[r] + numbers[l]
+        is bigger than target then r-- else l++.
 */
 
 vector<int> twoSum(vector<int>& numbers, int target) {
     int r = numbers.size() - 1;
     int l = 0;
 
+    // while left < right
     while(l < r) {
+        // if sum is bigger than target l++
         if (numbers[l] + numbers[r] < target)
             l++;
+        // if sum is bigger than target r--
         else if (numbers[l] + numbers[r] > target)
             r--;
+        // else the sum target is found
         else
             break;
     }
 
+    // return indexes + 1
     return {l + 1, r + 1};
 }
 

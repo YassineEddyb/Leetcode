@@ -24,8 +24,8 @@ int main () {
 	cout << "Expected: " << " " << endl;
 
 	cout << "Output:   ";
-	// for(int i = 0; i < v1.size(); i++) {
-	// 	cout << v1[i] << " ";
+	// for(int i = 0; i < vec.size(); i++) {
+	// 	cout << vec[i] << " ";
 	// }
 	cout << endl;
 }
