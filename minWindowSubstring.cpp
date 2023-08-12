@@ -28,19 +28,16 @@ using namespace std;
 		
 	- Algorithem: Sliding Window
 
-	- Time complixity: 
-	- Space complixity:
+	- Time complixity: O(n logn)
+	- Space complixity: O(n)
 
-	- Approach:
+	- Approach: 
+        I used Sliding Window tecknique to loop over (s) and 
+        two hash maps first (chars_map) to cound the chars in
+        (t) and (map) to count the chars in the current window
+        and I keep the size of the smallest window that contains
+        all chars of in a vector (c).
 */
-
-// bool checkEqualMaps(map<char, int> m1, map<char, int> m2) {
-//     for (auto i : m1) {
-//         if (m2[i.first] < i.second)
-//             return false;
-//     }
-//     return true;
-// }
 
 string minWindow(string s, string t) {
     map<char, int> chars_map;
@@ -49,28 +46,43 @@ string minWindow(string s, string t) {
     int l = 0, r = 0;
     vector<int> c = {0, -1};
 
+    // if t is empty return empty string
     if (t.size() == 0)
         return "";
 
+    // get the cound of chars in t and store them in chars_map
     for(int i = 0; i < t.size(); i++) {
         if (++chars_map[t[i]] == 1)
+            // update need if the char is not already in chars_map
             need++;
     }
 
+    // loop until l or r are bigger than s.size()
     while (l < s.size() && r < s.size() + 1) {
+        // check if s[r] is not in chars_map
         if (chars_map.find(s[r]) != chars_map.end()) {
+            // increment the count of s[r] in map
             map[s[r]]++;
+            // if the amount of s[r] in map is the same in chars_map
             if (map[s[r]] == chars_map[s[r]])
+                // increment (have)
                 have++;
         }
 
+        // have is the same as need shrink from the left
         while (r - l + 1 >= t.size() && have == need) {
+            // if current window length is smaller update (c)
             if (c[1] < 0 || c[1] - c[0] + 1 > r - l + 1)
                 c = {l, r};
 
+            // check if s[l] is not in chars_map
             if (chars_map.find(s[l]) != chars_map.end()) {
+                // decrement the count of s[l] in map
                 map[s[l]]--;
+
+                // check if s[l] count is no longer equal in map and chars_mpa
                 if (map[s[l]] < chars_map[s[l]])
+                    // decrease (have)
                     have--;
             }
             l++;
@@ -78,7 +90,9 @@ string minWindow(string s, string t) {
         r++;
     }
 
+    // get the sub string and put it in res
     string res(s, c[0], c[1] - c[0] + 1);
+
     return res;
 }
 
