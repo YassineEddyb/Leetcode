@@ -27,3 +27,4 @@ This repository is my container of the problems I solved at Leetcode platform al
 21- <a href="./validPalindrome.cpp">Valid Palindrome</a> `Easy` <br>
 22- <a href="./isSubsequence.cpp">Is Subsequence</a> `Easy` <br>
 23- <a href="./twoSum2.cpp">Two Sum II - Input Array Is Sorted</a> `Meduim` <br>
+24- <a href="./maxArea.cpp">Container With Most Water</a> `Meduim` <br>
