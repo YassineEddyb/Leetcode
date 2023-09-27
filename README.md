@@ -1,6 +1,6 @@
 # Leetcode
 
-This repository is my container of the problems I solved at Leetcode platform along with Aproaches and some data about the problems
+This repository is my container of the problems I solved at Leetcode platform along with Aproaches and some metadata about the problems
 
 ### problems
 
