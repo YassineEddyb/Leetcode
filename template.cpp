@@ -12,12 +12,10 @@ using namespace std;
 		
 	- Example: 
 		
-	- Algorithem: 
+	- Technique: 
 
 	- Time complixity: 
 	- Space complixity:
-
-	- Approach:
 */
 
 int main () {

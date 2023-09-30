@@ -52,7 +52,7 @@ bool isIsomorphic(string s, string t) {
         }
         /*  if one of the characters is mapped and the other
             character not equal to the value of the first character 
-            in the map the they are not isomorphic*/
+            in the map the they are not isomorphic  */
         else if (s_map[s[i]] != t[i])
             return false;
     }
