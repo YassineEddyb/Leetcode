@@ -1,10 +1,10 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 /*
-	- Problem: Valid Anagram 
+	- Problem: Valid Anagram
 
 	- Difficulty: Easy
 
@@ -32,7 +32,7 @@ using namespace std;
 */
 
 bool isAnagram(string s, string t) {
-    map<char, int> map;
+    unordered_map<char, int> map;
 
     // if they sizes differ they are not anagram
     if(s.size() != t.size())
